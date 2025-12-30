@@ -2,10 +2,9 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>狭間書房について | Hazama Publishing</title>
   <style>
-    body {
+   body {
       background-color: #ffffff;
       color: #32a9cd;
       font-family: "ヒラギノ角ゴシック", serif;
@@ -14,7 +13,7 @@
       padding: 0;
     }
 
-/* ヘッダー */
+    /* ヘッダー */
     header {
       display: flex;
       justify-content: space-between;
@@ -28,16 +27,16 @@
       flex-direction: column;
     }
     .title-wrapper a {
-      text-decoration: none;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .title-wrapper a:hover h1 {
-      opacity: 0.8;
-      transition: opacity 0.3s ease;
-    }
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.title-wrapper a:hover h1 {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
     header h1 {
       margin: 0;
       font-size: 3em;
@@ -55,6 +54,7 @@
       text-align: center;
       color: #fff;
     }
+
     /* 検索 */
     .search {
       display: flex;
@@ -83,7 +83,8 @@
     .search button:hover {
       background-color: #001f33;
     }
-/* ナビゲーション */
+
+    /* ナビゲーション */
     nav {
       text-align: center;
       padding: 1em 0;
@@ -102,11 +103,12 @@
       color: #32a9cd;
       border-bottom: 2px solid #32a9cd;
     }
-/* コンテンツ */
+
+    /* コンテンツ */
     .content {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 2em auto;
-      padding: 0 1em;
+      padding: 0 2em;
     }
 
     /* ページタイトル */
@@ -218,7 +220,7 @@
 </head>
 <body>
   <header>
-     <div class="title-wrapper">
+    <div class="title-wrapper">
     <a href="https://hazamashobo.github.io/main/index.html">
       <h1>狭間書房</h1>
       <p class="subtitle">Hazama Publishing</p>
@@ -233,10 +235,10 @@
   </header>
 
   <nav>
-    <a href="https://hazamashobo.github.io/main/index.html">ホーム</a>
-    <a href="https://hazamashobo.github.io/company/index.html" class="active">狭間書房について</a>
-    <a href="https://hazamashobo.github.io/books/index.html">刊行物</a>
-    <a href="https://hazamashobo.github.io/contact/index.html">お問い合わせ</a>
+    <a href="https://hazamashobo.github.io/main/">ホーム</a>
+    <a href="https://hazamashobo.github.io/company/">狭間書房について</a>
+    <a href="https://hazamashobo.github.io/books/" class="active">刊行物</a>
+    <a href="https://hazamashobo.github.io/contact/">お問い合わせ</a>
   </nav>
 
   <div class="content">
