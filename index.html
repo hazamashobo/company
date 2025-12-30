@@ -2,15 +2,24 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>狭間書房について | Hazama Publishing</title>
   <style>
-   body {
-      background-color: #ffffff;
-      color: #32a9cd;
-      font-family: "ヒラギノ角ゴシック", serif;
-      line-height: 1.8;
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #32a9cd;
+      font-family: "ヒラギノ角ゴシック", sans-serif;
+      line-height: 1.8;
+      display: flex;
+      flex-direction: column;
     }
 
     /* ヘッダー */
@@ -21,22 +30,26 @@
       padding: 1em 2em;
       background-color: #32a9cd;
       color: #fff;
+      flex-shrink: 0;
+      gap: 2em;
+      box-sizing: border-box;
+      width: 100%;
     }
     .title-wrapper {
       display: flex;
       flex-direction: column;
     }
     .title-wrapper a {
-  text-decoration: none;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-}
-.title-wrapper a:hover h1 {
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .title-wrapper a:hover h1 {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
     header h1 {
       margin: 0;
       font-size: 3em;
@@ -59,6 +72,14 @@
     .search {
       display: flex;
       align-items: center;
+      gap: 0.5em;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+    .search form {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
     }
     .search input {
       padding: 4px;
@@ -73,12 +94,13 @@
     }
     .search button {
       padding: 4px 6px;
-      margin-left: 4px;
       border-radius: 4px;
       border: none;
       background-color: #003366;
       color: #fff;
       cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .search button:hover {
       background-color: #001f33;
@@ -89,12 +111,18 @@
       text-align: center;
       padding: 1em 0;
       background-color: #f0f0f0;
+      flex-shrink: 0;
+      overflow-x: auto;
+      box-sizing: border-box;
+      width: 100%;
     }
     nav a {
       color: #003366;
       margin: 0 1em;
       text-decoration: none;
       font-weight: bold;
+      display: inline-block;
+      white-space: nowrap;
     }
     nav a:hover {
       color: #32a9cd;
@@ -109,6 +137,9 @@
       max-width: 1200px;
       margin: 2em auto;
       padding: 0 2em;
+      flex: 1;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     /* ページタイトル */
@@ -169,6 +200,7 @@
       padding: 1em 1.5em;
       text-align: left;
       border-bottom: 1px solid #e0e0e0;
+      box-sizing: border-box;
     }
     .company-info th {
       background-color: #32a9cd;
@@ -184,40 +216,158 @@
       border-bottom: none;
     }
 
-    /* 特別なコンテンツエリア */
-    .mystery-box {
-      margin: 3em 0;
-      padding: 2em;
-      background: linear-gradient(135deg, #003366 0%, #32a9cd 100%);
-      border-radius: 8px;
-      color: #fff;
-      text-align: center;
-    }
-    .mystery-box h3 {
-      margin: 0 0 1em 0;
-      font-size: 1.5em;
-    }
-    .mystery-box p {
-      color: #fff;
-      font-style: italic;
-      opacity: 0.9;
-    }
-
     /* フッター */
     footer {
       background-color: #32a9cd;
       color: #ffffff;
       text-align: center;
       padding: 1em;
-      margin-top: 3em;
+      flex-shrink: 0;
+      margin-top: auto;
+      box-sizing: border-box;
+      width: 100%;
     }
-     /* レスポンシブ */
+
+    /* レスポンシブ */
     @media (max-width: 768px) {
-      .content {
-        padding: 0 1em;
+      header {
+        padding: 1em;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+        gap: 1em;
       }
+
       header h1 {
         font-size: 2em;
+      }
+
+      .title-wrapper {
+        width: 100%;
+      }
+
+      .search {
+        width: 100%;
+      }
+
+      .search form {
+        width: 100%;
+        display: flex;
+      }
+
+      .search input {
+        width: 100%;
+        flex: 1;
+      }
+
+      nav a {
+        margin: 0 0.5em;
+        font-size: 0.9em;
+      }
+
+      .content {
+        padding: 0 1em;
+        margin: 1em auto;
+      }
+
+      .page-title {
+        margin: 1em 0;
+        padding: 1em;
+      }
+
+      .page-title h1 {
+        font-size: 1.8em;
+      }
+
+      .page-title p {
+        font-size: 1em;
+      }
+
+      .section {
+        margin: 2em 0;
+        padding: 1.5em;
+      }
+
+      .section h2 {
+        font-size: 1.5em;
+      }
+
+      .company-info th {
+        width: 40%;
+      }
+
+      .company-info th,
+      .company-info td {
+        padding: 0.8em 1em;
+        font-size: 0.95em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        flex-direction: column;
+        gap: 0.5em;
+      }
+
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      .subtitle {
+        font-size: 0.9em;
+      }
+
+      .search {
+        width: 100%;
+      }
+
+      .search input {
+        width: 100%;
+        padding: 0.5em;
+      }
+
+      .search button {
+        padding: 0.5em 0.8em;
+        font-size: 0.9em;
+      }
+
+      nav a {
+        margin: 0 0.3em;
+        font-size: 0.8em;
+      }
+
+      .content {
+        padding: 0 0.8em;
+        margin: 0.8em auto;
+      }
+
+      .page-title h1 {
+        font-size: 1.5em;
+      }
+
+      .section {
+        margin: 1.5em 0;
+        padding: 1em;
+      }
+
+      .section h2 {
+        font-size: 1.3em;
+        margin-bottom: 0.8em;
+      }
+
+      .section p {
+        font-size: 0.95em;
+        margin: 0.8em 0;
+      }
+
+      .company-info th,
+      .company-info td {
+        padding: 0.6em 0.8em;
+        font-size: 0.85em;
+      }
+
+      .company-info th {
+        width: 50%;
       }
     }
   </style>
@@ -225,12 +375,12 @@
 <body>
   <header>
     <div class="title-wrapper">
-    <a href="https://hazamashobo.github.io/main/index.html">
-      <h1>狭間書房</h1>
-      <p class="subtitle">Hazama Publishing</p>
-    </a>
-  </div>
-  <div class="search">
+      <a href="https://hazamashobo.github.io/main/index.html">
+        <h1>狭間書房</h1>
+        <p class="subtitle">Hazama Publishing</p>
+      </a>
+    </div>
+    <div class="search">
       <form action="https://hazamashobo.github.io/result/" method="get">
         <input type="text" id="searchInput" name="q" placeholder="キーワード入力">
         <button type="submit">検索</button>
@@ -240,7 +390,7 @@
 
   <nav>
     <a href="https://hazamashobo.github.io/main/">ホーム</a>
-    <a href="https://hazamashobo.github.io/company/"class="active" >狭間書房について</a>
+    <a href="https://hazamashobo.github.io/company/" class="active">狭間書房について</a>
     <a href="https://hazamashobo.github.io/books/">刊行物</a>
     <a href="https://hazamashobo.github.io/contact/">お問い合わせ</a>
   </nav>
@@ -248,6 +398,7 @@
   <div class="content">
     <div class="page-title">
       <h1>狭間書房について</h1>
+      <p>現実と虚構の境界を探求する出版社</p>
     </div>
 
     <section class="section">
@@ -279,11 +430,11 @@
           </tr>
           <tr>
             <th>編集長</th>
-            <td>桐須瑛人</td>
+            <td>杞梯盛人</td>
           </tr>
           <tr>
             <th>所在地</th>
-            <td>〒XXX-XXXX 東京都 新谷区 神宮前1-2-365 山鳥ビル</td>
+            <td>〒XXX-XXXX 東京都 新宿区 神宮前1-2-365 山鳥ビル</td>
           </tr>
           <tr>
             <th>電話番号</th>
@@ -306,10 +457,11 @@
       <p><strong>1970年</strong> - 東京都渋谷区にて、「狭間書房」創業。美術評論と現代思想の翻訳出版を主軸にスタート。<br>
       <strong>1983年</strong> - 初の文学賞、「狭間文学賞」を創設。新人作家の登竜門として機能し始める。<br>
       <strong>1995年</strong> - デザイン性を重視した書籍装丁で高評価を受け、日本出版美術作品会より賞を受賞。<br>
-      <strong>1999年</strong> - 公式ウェブサイトを開設。問い合わせフォームや新刊情報の公開を開始。<br>
-      <strong>2022年</strong> - ワークショップイベント、「間（あわい）の読書会」を開始。<br>
+      <strong>1999年</strong> - 公式ウェブサイトを開設。お問い合わせフォームや新刊情報の公開を開始。<br>
+      <strong>2022年</strong> - ワークショップイベント、「間（あああい）の読書会」を開始。<br>
       <strong>2024年</strong> - 「失われゆく都市空間」をテーマにした大型写真展を主催。<br>
       <strong>2025年</strong> - 現在に至る<br>
+      </p>
     </section>
   </div>
 
